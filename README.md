@@ -65,7 +65,7 @@
 
 ```mermaid
 %%{init: {'theme': 'dark', "flowchart" : { "curve" : "basis" } } }%%
-graph TB
+graph LR
 A[Spreadsheets] -->|Then we move to| B[Relational DB - MySQL]
 B -->|Then we move to| C[Big Data - NoSQL]
 C -->|Finally| D[Machine Learning]
@@ -75,7 +75,7 @@ C -->|Finally| D[Machine Learning]
 
 ```mermaid
 %%{init: {'theme': 'dark', "flowchart" : { "curve" : "basis" } } }%%
-graph TB
+graph LR
 A[Data Collection] --> B[Data Preprocessing]
 B -->|What problem we are tring to solve?| C[Problem Definition]
 C -->|What data do we have?| D[Data]
