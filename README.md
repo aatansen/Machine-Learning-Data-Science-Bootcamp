@@ -1,12 +1,37 @@
 <details>
-<summary>Enable Jupyter Notebook extension and Code formatter</summary>
+<summary>Making environment more useful</summary>
+
+**Enable conda in cmd**
+
+- add this in system environment path `C:\ProgramData\Anaconda3\Scripts`
+
+Run Jupyter Notebook instantly from cmd
+
+- run `jupyter notebook`
+
+**List of running Jupyter Notebook**
+
+- in cmd run `jupyter notebook list`
+
+**Stop running notebook**
+
+- `jupyter notebook stop`
+
+**Update conda** 
+
+- open anaconda shell as administrator**(also in cmd if enabled)** and run `conda update --all`
+
+**If any error related to Module not found** 
+
+- name of the module e.g: yapf run : `pip install yapf` or `conda install yapf`
+
+**Enable Jupyter Notebook extension (If not present in notebook)**
 
 - pip install jupyter_contrib_nbextensions Now type and enter:
 - jupyter contrib nbextension install --user Now let's enable the extension:
 - jupyter nbextension enable
-- e.g-->C:\ProgramData\Anaconda3\Lib\site-packages\jupyter_contrib_nbextensions\nbextensions\codefolding\main Now open Jupyter Notebook
-- 'Nbextensions' will be there now enable required extension
-- Done!!!
+- e.g-->C:\ProgramData\Anaconda3\Lib\site-packages\jupyter_contrib_nbextensions\nbextensions\codefolding\main
+- Now open Jupyter Notebook 'Nbextensions' will be there now enable required extension
 </details>
 
 <details>
@@ -610,5 +635,81 @@ How could we improve / what can we try next?
 - Machine Learning: [TensorFlow](https://www.tensorflow.org/), [PyTorch](https://pytorch.org/), [scikit-learn](https://scikit-learn.org/stable/), [XGBoost](https://xgboost.ai/), [CatBoost](https://catboost.ai/)
     
     <a href="https://i.imgur.com/rir7VpO.png" target="_blank">Machine Learning Tools</a>
+
+</details>
+
+<details>
+<summary>Data Science Environment Setup</summary>
+
+### Tools we are going to use
+
+**Steps to learn machine learning**
+
+- Create a framework (we created in previous section)
+- Match to data science and machine learning tools
+- Learn by doing
+
+**Machine Learning Tools**
+
+- [Anaconda](https://www.anaconda.com/): Hardware Store = 7.53GB (443 packs v2022.10 with update 30 Jan 2023)
+- [Miniconda](https://docs.conda.io/en/latest/miniconda.html): Workbench = 200 MB
+- Choosing Anaconda vs Miniconda
+    
+    
+    | Anaconda | Miniconda |
+    | --- | --- |
+    | New to conda or python | familiar with conda and python |
+    | Preinstalled Packages | can install individual packages |
+    | Have the time and disk space | Not enough disk space |
+- [Conda](https://docs.conda.io/en/latest/): Package Manager which is use to setup the rest of tools
+    - Data Analysis: [pandas](https://pandas.pydata.org/), [Matplotlib](https://matplotlib.org/), [NumPy](https://numpy.org/)
+    - Machine Learning: [TensorFlow](https://www.tensorflow.org/), [PyTorch](https://pytorch.org/), [scikit-learn](https://scikit-learn.org/stable/), [XGBoost](https://xgboost.ai/), [CatBoost](https://catboost.ai/)
+- `Note`: miniconda required conda to install tools. Anaconda come with full packages but need to update packages (mentioned earlier how to update) . So either Miniconda+conda or Anaconda
+
+### Jupyter Notebook
+
+| Command Mode (press Esc to enable) | Edit Mode (press Enter to enable) |
+| --- | --- |
+| H: get full list of shortcuts | Shift + Enter: run the current cell and move to the next one. |
+| Esc: enter command mode. | Ctrl + Enter: run the current cell and keep it selected. |
+| A: insert a new cell above the current cell. | Ctrl + ]: indent the current block. |
+| B: insert a new cell below the current cell. | Ctrl + [: un-indent the current block. |
+| C: copy the current cell. | Ctrl + A: select all text in the current cell. |
+| V: paste cells below the current cell. | Ctrl + Z: undo. |
+| D, D: delete the current cell. | Ctrl + Y: redo. |
+| Shift + J or Shift + Down: select the next cell in the same column. | Ctrl + Home: go to the beginning of the cell. |
+| Shift + K or Shift + Up: select the previous cell in the same column. | Ctrl + End: go to the end of the cell. |
+| Ctrl + Shift + -: split the current cell at the cursor. | Ctrl + Left: go one word to the left. |
+| Z: undo cell deletion. | Ctrl + Right: go one word to the right. |
+| X: cut the current cell. | Tab: indent the current line. |
+| Shift + M: merge selected cells. | Shift + Tab: un-indent the current line. |
+| M: markdown , Y: Code | More added manually by editing |
+
+### Sample Project
+
+```python
+import pandas as pd
+df = pd.read_csv("heart-disease.csv")
+df.head(10)
+df.target.value_counts().plot(kind="bar")
+```
+
+**If the above code does not work we need to import matplotlib**
+
+```python
+import matplotlib.pyplot as plt
+```
+
+**Opening a csv file**
+
+- pd.read_csv("file.csv")
+
+**Data frame row**
+
+Pandas data frame `df` where we use `df.target.value_counts().plot(kind="bar")` here `target` is a column name where we use `value_counts()` to count & `plot(kind="bar")` to make a bar graph
+
+**Image in markdown**
+
+- ![](img location or img link)
 
 </details>
