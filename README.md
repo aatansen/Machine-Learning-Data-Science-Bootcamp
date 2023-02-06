@@ -19,7 +19,7 @@
 
 **Update conda** 
 
-- open anaconda shell as administrator**(also in cmd if enabled)** and run `conda update --all`
+- open anaconda shell as administrator **(also in cmd if enabled)** and run `conda update --all`
 
 **If any error related to Module not found** 
 
@@ -43,6 +43,7 @@
     import warnings
     warnings.filterwarnings('ignore')
     ```
+- Also this line can be written in notebook to disable warning.
 </details>
 
 <details>
