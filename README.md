@@ -5,7 +5,7 @@
 
 - add this in system environment path `C:\ProgramData\Anaconda3\Scripts`
 
-Run Jupyter Notebook instantly from cmd
+**Run Jupyter Notebook instantly from cmd**
 
 - run `jupyter notebook`
 
@@ -23,15 +23,26 @@ Run Jupyter Notebook instantly from cmd
 
 **If any error related to Module not found** 
 
-- name of the module e.g: yapf run : `pip install yapf` or `conda install yapf`
+- name of the module e.g: yapf; run : `pip install yapf` or `conda install yapf`
 
 **Enable Jupyter Notebook extension (If not present in notebook)**
 
-- pip install jupyter_contrib_nbextensions Now type and enter:
-- jupyter contrib nbextension install --user Now let's enable the extension:
-- jupyter nbextension enable
-- e.g-->C:\ProgramData\Anaconda3\Lib\site-packages\jupyter_contrib_nbextensions\nbextensions\codefolding\main
-- Now open Jupyter Notebook 'Nbextensions' will be there now enable required extension
+- `pip install jupyter_contrib_nbextensions`
+- Now type and enter:
+- `jupyter contrib nbextension install --user`
+- Now let's enable the extension:
+- `jupyter nbextension enable`
+- Now open Jupyter Notebook `Nbextensions` will be there now enable required extension
+
+**Disable warning**
+
+- Create `disable-warnings.py` at location `C:\Users\Tansen\.ipython\profile_default\startup`
+- in `disable-warnings.py`
+    
+    ```python
+    import warnings
+    warnings.filterwarnings('ignore')
+    ```
 </details>
 
 <details>
