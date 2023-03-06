@@ -44,6 +44,25 @@
     warnings.filterwarnings('ignore')
     ```
 - Also this line can be written in notebook to disable warning.
+
+**Virtual Environment Setup and Package installation:**
+
+- In project directory open cmd type and enter:
+    
+    `conda create --prefix ./env jupyter`
+    
+- Now activate conda:
+    
+    `conda activate {"location path of ./env"}`
+    
+- Now let’s install a package called `pyresparser`
+    
+    install one by one :
+    
+    - `pip install nltk`
+    - `pip install spacy==2.3.8 --no-cache-dir --only-binary :all:`
+    - `pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.3.1/en_core_web_sm-2.3.1.tar.gz`
+    - `pip install pyresparser`
 </details>
 
 <details>
