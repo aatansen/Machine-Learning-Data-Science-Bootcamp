@@ -744,3 +744,180 @@ Pandas data frame `df` where we use `df.target.value_counts().plot(kind="bar")` 
 - ![](img location or img link)
 
 </details>
+
+<details>
+<summary>Pandas Data Analysis</summary>
+
+### Pandas Introduction
+
+**Why pandas?**
+
+- Simple to use
+- Integrated with many other data science & ML Python Tools
+- Helps you get your data ready for machine learning
+
+**Learning on this section**
+
+- Most useful functions
+- pandas Datatypes
+- Importing & exporting data
+- Describing data
+- Viewing & Selecting data
+- Manipulating data
+
+**Two Main Datatype**
+
+- Series is 1D and similar to list in python
+- DataFrame is 2D and similar to  Dictionary in python
+    
+    ```python
+    # series = 1 dimentional
+    series = pd.Series(['BMW','Toyota','Honda'])
+    colours = pd.Series(['Red','Blue','White'])
+    
+    # DataFrame = 2 dimentional
+    car_data = pd.DataFrame({'Car make':series, 'Colour':colours})
+    ```
+    
+- Import & export to csv
+    
+    ```python
+    # import data
+    car_sales = pd.read_csv('car-sales.csv')
+    # Exporting to csv
+    car_sales.to_csv('exported-car-sales.csv',index=False) #index won't counted
+    ```
+    
+- Import & export to excel
+    
+    ```python
+    # import data
+    car_sales = pd.read_csv("car-sales.csv")
+    # Exporting to excel
+    car_sales.to_excel("exported-car-sales.xlsx", index=False) #index won't counted
+    export_car_sales = pd.read_excel("exported-car-sales.xlsx")
+    ```
+    
+
+### Anatomy of a Dataframe
+
+![Anatomy of a Dataframe](https://images2.imgbox.com/6c/eb/LfMv4qeh_o.png)
+
+### Describe Data
+
+```python
+#An Attribute doesn't have bracket "()" only Function contain bracket"()"
+#Attribute -- dtypes
+car_sales.dtypes
+
+#Function -- to_csv()
+car_sales.to_csv()
+
+car_sales.dtypes #get data types
+car_sales.columns #get columns names
+car_sales.index #get index range start,stop,step
+car_sales.describe() #get statistics info of numeric columns
+car_sales.info() #get more details similar to .dtypes
+car_sales.mean(numeric_only=True) #get mean
+#custom created series mean
+car_prices = pd.Series([300,1500,111250])
+car_prices.mean()
+
+car_sales.sum() #get all column sum
+car_sales['Doors'].sum() #get Door column sum
+len(car_sales) #get length
+car_sales #get first 10 column
+```
+
+### Viewing and selecting data
+
+```python
+car_sales.head() #get top 5 rows
+car_sales.head(7) #get top 7 rows
+car_sales.tail() #get bottom 5 rows
+
+# .loc = index location & .iloc = position
+animals = pd.Series(['cat','dog','bird','panda','snake'])
+
+# Custom index
+animals = pd.Series(['cat','dog','bird','panda','snake'],index=[9,3,6,2,3])
+animals.loc[3] #index location
+animals.iloc[3] #position
+
+# Get first four row
+car_sales.loc[:3]
+car_sales.head(4)
+
+# Selecting individual columns
+car_sales['Make']
+car_sales.Make
+# If column name contain spaces it won't work in dot way
+car_sales['Odometer (KM)']
+# car_sales.Odometer (KM) <-- This will give error
+
+# Filtering
+car_sales[car_sales['Make']=='Toyota'] # This will show only Toyota data from Make column
+car_sales[car_sales['Odometer (KM)']>100000]
+
+# Crossover
+pd.crosstab(car_sales['Make'], car_sales['Doors'])
+
+# more useful as crossover is Groupby
+car_sales.groupby(['Make','Colour','Price']).mean()
+
+# Fixing the Price columns $4,000.00
+car_sales["Price"] = car_sales["Price"].str.replace('[\$\,]', '',regex=True).astype(float)
+```
+
+### Data Manipulation
+
+```python
+# Every data on "Make" column to lowercase
+car_sales['Make']=car_sales['Make'].str.lower()
+
+# Working with Missing data filling Odometer missing value with mean of Odometer
+car_sales_missing['Odometer'].fillna(car_sales_missing['Odometer'].mean())
+
+# Filling value in datatset 2 ways 
+# assigning way:
+car_sales_missing['Odometer']=car_sales_missing['Odometer'].fillna(car_sales_missing['Odometer'].mean())
+# inplace way:
+car_sales_missing['Odometer'].fillna(car_sales_missing['Odometer'].mean(),inplace = True)
+
+# Dropping missing value
+car_sales_missing_dropped = car_sales_missing.dropna()
+
+# Capitalize car names
+car_sales['Make']=car_sales['Make'].str.capitalize()
+
+# Column from series
+seats_column = pd.Series([5,5,5,5,5])
+car_sales['Seats']=seats_column
+
+# Column from python list
+fuel_economy = [7.5,9.2,5.0,9.6,8.7,4.7,7.6,8.7,3.0,4.5]
+car_sales['Fuel per 100KM']=fuel_economy
+car_sales
+
+# Calculation
+car_sales['Total fuel used (L)']=car_sales['Odometer (KM)']/100 *car_sales['Fuel per 100KM']
+car_sales
+
+# Creating a boolean column
+car_sales['Passed road saftry']=True
+
+# creating a column from single value
+car_sales['Number of wheels']=4
+car_sales
+
+# creating a dummy column to drop
+dump=pd.Series([5,3,3,4,5,3,7,3,2,4])
+car_sales['Dump']=dump
+# Droping the dummy column
+car_sales=car_sales.drop('Dump',axis=1)
+
+# Using lambda to convert Miles to KM
+car_sales['Odometer (KM)'] = car_sales['Odometer (KM)'].apply(lambda x:x/1.6)
+```
+
+</details>
