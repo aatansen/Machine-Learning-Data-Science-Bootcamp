@@ -25,6 +25,15 @@
 
 - name of the module e.g: yapf; run : `pip install yapf` or `conda install yapf`
 
+**Adding Anaconda in environment path**
+> Note: my anaconda setup was done for user not for all user in my system
+- Goto `Edit the system environment variables` and those in path:
+  - C:\Users\Tansen\anaconda3
+  - C:\Users\Tansen\anaconda3\Library\mingw-w64\bin
+  - C:\Users\Tansen\anaconda3\Library\usr\bin
+  - C:\Users\Tansen\anaconda3\Library\bin
+  - C:\Users\Tansen\anaconda3\Scripts
+
 **Enable Jupyter Notebook extension (If not present in notebook)**
 
 > If bellow 2 process doesn't work there is a problem related to version.
