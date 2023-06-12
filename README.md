@@ -27,11 +27,20 @@
 
 **Enable Jupyter Notebook extension (If not present in notebook)**
 
+> If bellow 2 process doesn't work there is a problem related to version.
+
+- Install by one command in `Anaconda Prompt` (open as admin for write permission)
+  - `conda install -c conda-forge jupyter_contrib_nbextensions`
+- Descriptive way:
 - `pip install jupyter_contrib_nbextensions`
 - Now type and enter:
+- `pip install jupyter_nbextensions_configurator`
+- Type and enter:
 - `jupyter contrib nbextension install --user`
-- Now let's enable the extension:
-- `jupyter nbextension enable`
+- Type and enter:
+- `jupyter nbextensions_configurator enable --user`
+- Enable/Disable extension by command:
+- `jupyter nbextension enable/disable highlighter/highlighter`
 - Now open Jupyter Notebook `Nbextensions` will be there now enable required extension
 
 **Disable warning**
