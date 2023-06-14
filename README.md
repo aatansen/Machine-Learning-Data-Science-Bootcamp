@@ -27,13 +27,28 @@
 
 **Adding Anaconda in environment path**
 > Note: my anaconda setup was done for user not for all user in my system
-- Goto `Edit the system environment variables` and add those in path:
-  - `C:\Users\Tansen\anaconda3`
-  - `C:\Users\Tansen\anaconda3\Library\mingw-w64\bin`
-  - `C:\Users\Tansen\anaconda3\Library\usr\bin`
-  - `C:\Users\Tansen\anaconda3\Library\bin`
-  - `C:\Users\Tansen\anaconda3\Scripts`
-
+- Goto `Edit the system environment variables` and add those in path:
+    
+    ```bash
+    C:\Users\Tansen\anaconda3
+    ```
+    
+    ```bash
+    C:\Users\Tansen\anaconda3\Library\mingw-w64\bin
+    ```
+    
+    ```bash
+    C:\Users\Tansen\anaconda3\Library\usr\bin
+    ```
+    
+    ```bash
+    C:\Users\Tansen\anaconda3\Library\bin
+    ```
+    
+    ```bash
+    C:\Users\Tansen\anaconda3\Scripts
+    ```
+    
 **Enable Jupyter Notebook extension (If not present in notebook)**
 
 > If bellow 2 process doesn't work there is a problem related to version.
